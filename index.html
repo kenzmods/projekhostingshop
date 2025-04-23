@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Meta Tags for SEO and Social Sharing -->
+	<title>Kenz Hosting | Dev Bot Wa And Hosting</title>
+	<meta name="description" content="Kenz Hosting. Temukan biodata, proyek, dan perjalanan saya dalam dunia coding dan teknologi.">
+	<meta name="author" content="Kenz Hosting">
+	<meta name="keywords" content="KenzHosting, coding, developer, proyek digital, teknologi, hosting,">
+	<meta name="robots" content="index, follow">
+
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:title" content="Kenz Hosting | Tentang Kenz And Produk Hosting">
+	<meta property="og:description" content="Kenz Hosting. Eksplorasi biodata, proyek, dan perjalanan saya dalam coding dan teknologi.">
+	<meta property="og:image" content="https://avatars.githubusercontent.com/Im-Dims">
+	<meta property="og:url" content="https://www.your-domain.my.id">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Kenz Hosting">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Kenz Hosting | Tentang Kenz And Produk Hosting">
+	<meta name="twitter:description" content="Kenz Hosting. Temukan biodata, proyek, dan perjalanan saya dalam dunia coding dan teknologi.">
+	<meta name="twitter:image" content="https://avatars.githubusercontent.com/Im-Dims">
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://www.your-domain.my.id">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/Im-Dims">
+
+	<!-- Theme Color -->
+	<meta name="theme-color" content="#007bff">
+
+	<!-- DNS Prefetch untuk Mempercepat Pemanggilan -->
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/animate.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+	<!-- Font Awesome (Versi Terbaru dari CDN) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+	<!-- SweetAlert2 -->
+	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"/>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Structured Data (Schema Markup) -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Person",
+	  "name": "Kenz Hosting",
+	  "url": "https://www.your-domain.my.id",
+	  "image": "https://avatars.githubusercontent.com/Im-Dims",
+	  "jobTitle": "Developer",
+	  "description": "Kenz Hosting. Temukan biodata, proyek, dan perjalanan saya dalam dunia coding dan teknologi.",
+	  "sameAs": [
+	    "https://github.com",
+	    "https://linkedin.com",
+	    "https://twitter.com"
+	  ]
+	}
+	</script>
+</head>
+<body>
+
+	<audio id="audio" src="audio.mp3" type="audio" loop=""></audio>
+
+	<div id="preloader">
+		<div class="outer">
+			<div class="infinityChrome">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
+			<div class="infinity">
+				<div>
+					<span></span>
+				</div>
+				<div>
+					<span></span>
+				</div>
+				<div>
+					<span></span>
+				</div>
+			</div>
+
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo-outer">
+				<defs>
+					<filter id="goo">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+						<feColorMatrix in="blur" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7" result="goo"/>
+						<feBlend in="SourceGraphic" in2="goo"/>
+					</filter>
+				</defs>
+			</svg>
+		</div>
+	</div>
+
+	<header class="mobile-header-1">
+		<div class="container">
+			<div class="menu-icon d-inline-flex mr-4">
+				<button>
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<div id="browser_info"></div>
+	<header class="mobile-header-1">
+		<script>
+			const DAYS = [
+				"Minggu", 
+				"Senin", 
+				"Selasa", 
+				"Rabu", 
+				"Kamis", 
+				"Jumat", 
+				"Sabtu"
+			];
+
+			const MONTHS = [
+				"Januari", 
+				"Februari", 
+				"Maret", 
+				"April", 
+				"Mei", 
+				"Juni", 
+				"Juli", 
+				"Agustus", 
+				"September", 
+				"Oktober", 
+				"November", 
+				"Desember"
+			];
+
+			const clockElement = document.querySelector("div#browser_info");
+
+			function updateClock() {
+				const now = new Date();
+				const hours = now.getHours().toString().padStart(2, '0');
+				const minutes = now.getMinutes().toString().padStart(2, '0');
+				const seconds = now.getSeconds().toString().padStart(2, '0');
+				const dayOfWeek = DAYS[now.getDay()];
+				const date = now.getDate();
+				const month = MONTHS[now.getMonth()];
+				const year = now.getFullYear();
+
+				clockElement.innerHTML = `<time>${hours}:${minutes}:${seconds} · ${dayOfWeek}, ${date} - ${month} - ${year}</time>`;
+			}
+
+			setInterval(updateClock, 1000);
+			updateClock();
+		</script>
+	</header>
+
+	<header class="desktop-header-1 d-flex align-items-start flex-column">
+		<div class="site-logo">
+			<h3 class="mb-2 mt-0" style="color: white; text-align: center;">I'm Kenz Hosting.</h3>
+		</div>
+
+		<nav>
+			<ul class="vertical-menu scrollspy">
+				<li class="active">
+					<a href="#home">
+						<i class="icon-home"></i>
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#about">
+						<i class="icon-user-following"></i>
+						About Me
+					</a>
+				</li>
+				<li>
+					<a href="#services">
+						<i class="icon-briefcase"></i>
+						Service
+					</a>
+				</li>
+				<li>
+					<a href="#journey">
+						<i class="icon-graduation"></i>
+						My Journey
+					</a>
+				</li>
+				<li>
+					<a href="#anime">
+						<i class="icon-layers"></i>
+						Favorite Anime
+					</a>
+				</li>
+				<li>
+					<a href="#produk">
+						<i class="icon-layers"></i>
+						Ringkasan Produk Kami
+					</a>
+				</li>
+				<li>
+					<a href="#produkLainnya">
+						<i class="icon-layers"></i>
+						Ringkasan Produk Lainnya
+					</a>
+				</li>
+				<li>
+					<a href="#contact">
+						<i class="icon-speech"></i>
+						Contact Me
+					</a>
+				</li>
+				<li>
+					<a href="#informasi">
+						<i class="icon-speech"></i>
+						Informasi Kami
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main class="content">
+		<section id="home" class="home d-flex align-items-center">
+			<div class="container">
+				<div class="intro">
+					<img 
+						src="images/imageBuffer.png" 
+						class="mb-4" 
+						style="width: auto; height: auto; border-radius: 10px;" 
+						alt="Profil Saya" 
+					/>
+					<h1 class="mb-2 mt-0">Kenz Hosting</h1>
+					<span>I'm a <span class="text-rotating">WhatsApp Bot Developer, Dev Hosting, Website Developer</span></span>
+
+					<ul class="social-icons light list-inline mb-0 mt-4">
+						<li class="list-inline-item">
+							<a href="https://www.youtube.com/@Kenzzmods" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://instagram.com/@kenzcyah" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://whatsapp.com/channel/0029Vb4eEsf5Ejy3ZGnRCi1K" target="_blank" rel="noopener noreferrer">
+								<i class="fab fa-whatsapp"></i>
+							</a>
+						</li>
+					</ul>
+
+					<div class="mt-4">
+						<a class="btn btn-default work-video" href="videos/video.mp4">Lihat Video</a>
+					</div>
+				</div>
+
+				<div class="scroll-down">
+					<a href="#about" class="mouse-wrapper">
+						<span class="mouse">
+							<span class="wheel"></span>
+						</span>
+					</a>
+				</div>
+
+				<div class="parallax" data-relative-input="true">
+					<!-- Layer 1: Lingkaran kuning -->
+					<svg width="27" height="29" data-depth="0.3" class="layer p1" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21.15625.60099c4.37954 3.67487 6.46544 9.40612 5.47254 15.03526-.9929 5.62915-4.91339 10.30141-10.2846 12.25672-5.37122 1.9553-11.3776.89631-15.75715-2.77856l2.05692-2.45134c3.50315 2.93948 8.3087 3.78663 12.60572 2.22284 4.297-1.5638 7.43381-5.30209 8.22768-9.80537.79387-4.50328-.8749-9.08872-4.37803-12.02821L21.15625.60099z" fill="#FFD15C" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 2: Segitiga merah -->
+					<svg width="26" height="26" data-depth="0.2" class="layer p2" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 3.3541L2.42705 24.5h21.1459L13 3.3541z" stroke="#FF4C60" stroke-width="3" fill="none" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 3: Lingkaran hijau -->
+					<svg width="30" height="25" data-depth="0.3" class="layer p3" xmlns="http://www.w3.org/2000/svg">
+						<path d="M.1436 8.9282C3.00213 3.97706 8.2841.92763 14.00013.92796c5.71605.00032 10.9981 3.04992 13.85641 8 2.8583 4.95007 2.8584 11.0491-.00014 16.00024l-2.77128-1.6c2.28651-3.96036 2.28631-8.84002.00011-12.8002-2.2862-3.96017-6.5124-6.40017-11.08513-6.4-4.57271.00018-8.79872 2.43984-11.08524 6.4002l-2.77128-1.6z" fill="#44D7B6" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 4: Garis kuning vertikal -->
+					<svg width="15" height="23" data-depth="0.6" class="layer p4" xmlns="http://www.w3.org/2000/svg">
+						<rect transform="rotate(30 9.86603 10.13397)" x="7" width="3" height="25" rx="1.5" fill="#FFD15C" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 5: Garis biru vertikal -->
+					<svg width="15" height="23" data-depth="0.2" class="layer p5" xmlns="http://www.w3.org/2000/svg">
+						<rect transform="rotate(30 9.86603 10.13397)" x="7" width="3" height="25" rx="1.5" fill="#6C6CE5" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 6: Bentuk merah ganda -->
+					<svg width="49" height="17" data-depth="0.5" class="layer p6" xmlns="http://www.w3.org/2000/svg">
+						<g fill="#FF4C60" fill-rule="evenodd">
+							<path d="M.5 16.5c0-5.71709 2.3825-10.99895 6.25-13.8567 3.8675-2.85774 8.6325-2.85774 12.5 0C23.1175 5.50106 25.5 10.78292 25.5 16.5H23c0-4.57303-1.90625-8.79884-5-11.08535-3.09375-2.28652-6.90625-2.28652-10 0C4.90625 7.70116 3 11.92697 3 16.5H.5z"/>
+							<path d="M23.5 16.5c0-5.71709 2.3825-10.99895 6.25-13.8567 3.8675-2.85774 8.6325-2.85774 12.5 0C46.1175 5.50106 48.5 10.78292 48.5 16.5H46c0-4.57303-1.90625-8.79884-5-11.08535-3.09375-2.28652-6.90625-2.28652-10 0-3.09375 2.28651-5 6.51232-5 11.08535h-2.5z"/>
+						</g>
+					</svg>
+
+					<!-- Layer 7: Segitiga kuning terbalik -->
+					<svg width="26" height="26" data-depth="0.4" class="layer p7" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13 22.6459L2.42705 1.5h21.1459L13 22.6459z" stroke="#FFD15C" stroke-width="3" fill="none" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 8: Garis biru miring -->
+					<svg width="19" height="21" data-depth="0.3" class="layer p8" xmlns="http://www.w3.org/2000/svg">
+						<rect transform="rotate(-40 6.25252 10.12626)" x="7" width="3" height="25" rx="1.5" fill="#6C6CE5" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 9: Lingkaran biru -->
+					<svg width="30" height="25" data-depth="0.3" data-depth-y="-1.30" class="layer p9" xmlns="http://www.w3.org/2000/svg">
+						<path d="M29.8564 16.0718c-2.85854 4.95114-8.1405 8.00057-13.85654 8.00024-5.71605-.00032-10.9981-3.04992-13.85641-8-2.8583-4.95007-2.8584-11.0491.00014-16.00024l2.77128 1.6c-2.28651 3.96036-2.28631 8.84002-.00011 12.8002 2.2862 3.96017 6.5124 6.40017 11.08513 6.4 4.57271-.00018 8.79872-2.43984 11.08524-6.4002l2.77128 1.6z" fill="#6C6CE5" fill-rule="evenodd"/>
+					</svg>
+
+					<!-- Layer 10: Bentuk hijau ganda -->
+					<svg width="47" height="29" data-depth="0.2" class="layer p10" xmlns="http://www.w3.org/2000/svg">
+						<g fill="#44D7B6" fill-rule="evenodd">
+							<path d="M46.78878 17.19094c-1.95535 5.3723-6.00068 9.52077-10.61234 10.8834-4.61167 1.36265-9.0893-.26708-11.74616-4.27524-2.65686-4.00817-3.08917-9.78636-1.13381-15.15866l2.34923.85505c-1.56407 4.29724-1.2181 8.92018.90705 12.12693 2.12514 3.20674 5.70772 4.5107 9.39692 3.4202 3.68921-1.0905 6.92581-4.40949 8.48988-8.70673l2.34923.85505z"/>
+							<path d="M25.17585 9.32448c-1.95535 5.3723-6.00068 9.52077-10.61234 10.8834-4.61167 1.36264-9.0893-.26708-11.74616-4.27525C.16049 11.92447-.27182 6.14628 1.68354.77398l2.34923.85505c-1.56407 4.29724-1.2181 8.92018.90705 12.12692 2.12514 3.20675 5.70772 4.5107 9.39692 3.4202 3.68921-1.0905 6.92581-4.40948 8.48988-8.70672l2.34923.85505z"/>
+						</g>
+					</svg>
+
+					<!-- Layer 11: Bentuk kuning melengkung -->
+					<svg width="33" height="20" data-depth="0.5" class="layer p11" xmlns="http://www.w3.org/2000/svg">
+						<path d="M32.36774.34317c.99276 5.63023-1.09332 11.3614-5.47227 15.03536-4.37895 3.67396-10.3855 4.73307-15.75693 2.77837C5.76711 16.2022 1.84665 11.53014.8539 5.8999l3.15139-.55567c.7941 4.50356 3.93083 8.24147 8.22772 9.8056 4.29688 1.56413 9.10275.71673 12.60554-2.2227C28.34133 9.98771 30.01045 5.4024 29.21635.89884l3.15139-.55567z" fill="#FFD15C" fill-rule="evenodd"/>
+					</svg>
+				</div>
+			</div>
+		</section>
+
+		<section id="about">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp">About Me</h2>
+				<div class="spacer" data-height="60"></div>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="text-center text-md-left">
+							<img src="images/about.png" style="height: auto; width: auto; border-radius: 10px;" alt="UI/UX Design"/>
+						</div>
+					<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+				</div>
+
+				<div class="col-md-9 triangle-left-md triangle-top-sm">
+					<div class="rounded bg-white shadow-dark padding-30">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Hanya seorang siswa <b>SMA</b> yang mengagumi teknologi, saya bukan orang yang hebat di bidang teknik maupun pemrograman, saya hanya <b>manusia biasa</b> yang kadang bisa, kadang nggak bisa, hehe. 😔✋</p>
+								<div class="spacer d-md-none d-lg-none" data-height="20"></div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="skill-item">
+									<div class="skill-info clearfix">
+										<h4 class="float-left mb-3 mt-0">Javascript</h4>
+										<span class="float-right">90%</span>
+									</div>
+									<div class="progress">
+										<div class="progress-bar data-background" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90" data-color="#FFD15C"></div>
+									</div>
+									<div class="spacer" data-height="20"></div>
+								</div>
+
+								<div class="skill-item">
+									<div class="skill-info clearfix">
+										<h4 class="float-left mb-3 mt-0">HTML</h4>
+										<span class="float-right">60%</span>
+									</div>
+									<div class="progress">
+										<div class="progress-bar data-background" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" data-color="#FF4C60"></div>
+									</div>
+									<div class="spacer" data-height="20"></div>
+								</div>
+
+								<div class="skill-item">
+									<div class="skill-info clearfix">
+										<h4 class="float-left mb-3 mt-0">CSS</h4>
+										<span class="float-right">30%</span>
+									</div>
+									<div class="progress">
+										<div class="progress-bar data-background" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" data-color="#6C6CE5"></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="spacer" data-height="70"></div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+
+					<div class="fact-item">
+						<span class="icon icon-emotsmile"></span>
+						<div class="details">
+							<h3 class="mb-0 mt-0 number"><em class="count">1000</em></h3>
+							<p class="mb-0">Satisfied Clients</p>
+						</div>
+					</div>
+					<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="fact-item">
+						<span class="icon icon-user-following"></span>
+						<div class="details">
+							<h3 class="mb-0 mt-0 number"><em class="count">1000</em></h3>
+							<p class="mb-0">Followers</p>
+						</div>
+					</div>
+					<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="fact-item">
+						<span class="icon icon-wallet"></span>
+						<div class="details">
+							<h3 class="mb-0 mt-0 number"><em class="count">1000</em></h3>
+							<p class="mb-0">Money</p>
+						</div>
+					</div>
+					<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<div class="fact-item">
+						<span class="icon icon-globe-alt"></span>
+						<div class="details">
+							<h3 class="mb-0 mt-0 number"><em class="count">1000</em></h3>
+							<p class="mb-0">Visitor</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="services">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp">Layanan</h2>
+				<div class="spacer" data-height="60"></div>
+				<div class="row">
+
+					<div class="col-md-4">
+						<div class="service-box rounded data-background padding-30 text-center text-light shadow-blue wow fadeInUp" data-color="#6C6CE5">
+							<img src="images/service2.svg"/>
+							<h3 class="mb-3 mt-0">Bot WhatsApp Developer</h3>
+							<p class="mb-0"></p>
+						</div>
+						<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="service-box rounded data-background padding-30 text-center shadow-yellow wow fadeInUp" data-color="#F9D74C">
+							<img src="images/service3.svg"/>
+								<h3 class="mb-3 mt-0">Video Editor</h3>
+								<p class="mb-0"></p>
+							</div>
+							<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="service-box rounded data-background padding-30 text-center text-light shadow-pink wow fadeInUp" data-color="#F97B8B">
+								<img src="images/service2.svg"/>
+								<h3 class="mb-3 mt-0">Web Developer</h3>
+								<p class="mb-0"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="journey">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp">Journey</h2>
+				<div class="spacer" data-height="60"></div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden">
+							<div class="timeline-container wow fadeInUp">
+								<div class="content">
+									<span class="time">2015 - 2021</span>
+									<h3 class="title">Nishi-Shinjuku Elementary School</h3>
+									<p>I'm students Nishi-Shinjuku Elementary School</p>
+								</div>
+							</div>
+
+							<div class="timeline-container wow fadeInUp" data-wow-delay="0.2s">
+								<div class="content">
+									<span class="time">2021 - 2024</span>
+									<h3 class="title">Nishi-Shinjuku Junior High School</h3>
+									<p>I'm students Nishi-Shinjuku Junior High School</p>
+								</div>
+							</div>
+
+							<div class="timeline-container wow fadeInUp" data-wow-delay="0.4s">
+								<div class="content">
+									<span class="time">2024 - Now</span>
+									<h3 class="title">Shibuya Academy</h3>
+									<p>I'm students Shibuya Academy</p>
+								</div>
+							</div>
+
+							<span class="line"></span>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+						<div class="timeline exp bg-white rounded shadow-dark padding-30 overflow-hidden">
+							<div class="timeline-container wow fadeInUp">
+								<div class="content">
+									<span class="time">2021 - Now</span>
+									<h3 class="title">Bot Developer</h3>
+									<p>I Create and Develop a WhatsApp Bot With Baileys Library Using Nodejs Programming Language.</p>
+								</div>
+							</div>
+
+							<div class="timeline-container wow fadeInUp" data-wow-delay="0.2s">
+								<div class="content">
+									<span class="time">2022 - Now</span>
+									<h3 class="title">Video Editor</h3>
+									<p>I Create and Edit Videos Using the Alight Motion App on Android.</p>
+								</div>
+							</div>
+
+							<div class="timeline-container wow fadeInUp" data-wow-delay="0.4s">
+								<div class="content">
+									<span class="time">2023 - Now</span>
+									<h3 class="title">Web Developer</h3>
+									<p>I Create and Develop a Website Using HTML Programming Language.</p>
+								</div>
+							</div>
+
+							<span class="line"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="anime">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp text-center">My Favorite Anime</h2>
+				<div class="spacer" data-height="60"></div>
+				<ul class="portfolio-filter list-inline wow fadeInUp">
+					<li class="current list-inline-item" data-filter="*">All</li>
+					<li class="list-inline-item" data-filter=".item-1">Shingeki no Kyojin</li>
+					<li class="list-inline-item" data-filter=".item-2">Majo no Tabitabi</li>
+					<li class="list-inline-item" data-filter=".item-3">Seirei Gensouki: Spirit Chronicles</li>
+				</ul>
+
+				<div class="pf-filter-wrapper">
+					<select class="portfolio-filter-mobile">
+						<option value="*">All</option>
+						<option value=".item-1">Shingeki no Kyojin</option>
+						<option value=".item-2">Majo no Tabitabi</option>
+						<option value=".item-3">Seirei Gensouki: Spirit Chronicles</option>
+					</select>
+				</div>
+
+				<div class="row portfolio-wrapper">
+					<div class="col-md-4 col-sm-6 grid-item item-1">
+						<a href="https://myanimelist.net/anime/16498/Shingeki_no_Kyojin">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Shingeki no Kyojin</span>
+									<h4 class="title">Shingeki no Kyojin (atau Attack on Titan) adalah sebuah anime yang diadaptasi dari manga karya Hajime Isayama. Cerita ini berlatar di dunia di mana umat manusia hidup dalam tembok-tembok raksasa untuk melindungi diri dari serangan makhluk raksasa bernama "Titan", yang telah mengancam keberadaan manusia selama ratusan tahun.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/anime1.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 grid-item item-2">
+						<a href="https://myanimelist.net/anime/40571/Majo_no_Tabitabi">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Majo no Tabitabi</span>
+									<h4 class="title">Majo no Tabitabi (The Journey of Elaina) adalah sebuah seri anime yang diadaptasi dari light novel karya Jougi Shiraishi. Cerita ini berfokus pada Elaina, seorang penyihir muda yang berkelana ke berbagai tempat di dunia untuk menjelajahi berbagai pengalaman dan petualangan. Setelah lulus dari akademi penyihir, Elaina memutuskan untuk melakukan perjalanan sendirian, mengunjungi berbagai kerajaan dan bertemu dengan berbagai orang dengan cerita hidup yang unik.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/anime2.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 grid-item item-3">
+						<a href="https://myanimelist.net/anime/44203/Seirei_Gensouki">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Seirei Gensouki: Spirit Chronicles</span>
+									<h4 class="title">Seirei Gensouki: Spirit Chronicles adalah anime yang diadaptasi dari light novel karya Yuri Kitayama. Cerita ini menggabungkan unsur isekai dengan elemen petualangan, magis, dan romansa.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/anime3.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		
+		<section id="produk">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp text-center">Ringkasan Produk Kami</h2>
+				<div class="spacer" data-height="60"></div>
+				<ul class="portfolio-filter list-inline wow fadeInUp">
+					<li class="current list-inline-item" data-filter="*">Cari Produk</li>
+					<li class="list-inline-item" data-filter=".produk-1">Vps Digital Ocean</li>
+					<li class="list-inline-item" data-filter=".produk-2">Panel Bot Wa</li>
+					<li class="list-inline-item" data-filter=".produk-3">Script Bot Wa</li>
+					<li class="list-inline-item" data-filter=".produk-4">Script Elaina Md</li>
+				</ul>
+
+				<div class="pf-filter-wrapper">
+					<select class="portfolio-filter-mobile">
+						<option value="*">Produk</option>
+						<option value=".produk-1">Vps Digital Ocean</option>
+						<option value=".produk-2">Panel Bot Wa</option>
+						<option value=".produk-3">Script Bot Wa</option>
+					</select>
+				</div>
+
+				<div class="row portfolio-wrapper">
+					<div class="col-md-4 col-sm-6 grid-item produk-1">
+						<a href="https://wa.me/6285189511339?text=.buyvps">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Vps Digital Ocean</span>
+									<h4 class="title">VPS Digital Ocean adalah layanan hosting awan yang menggunakan teknologi virtualisasi untuk menyediakan server virtual pribadi.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/vps.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 grid-item produk-2">
+						<a href="https://wa.me/6285189511339?text=.buypanel">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Panel Pterodactyl</span>
+									<h4 class="title">Panel Pterodactyl adalah panel manajemen server game berbasis web yang gratis dan open-source. Panel ini memungkinkan pengguna untuk memasang, mengelola, dan memasang script.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/panel.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 grid-item produk-3">
+						<a href="https://wa.me/6285189511339?text=.listscript">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Script Bot Wa</span>
+									<h4 class="title">Script Bot Wa adalah pemrograman yang digunakan untuk membuat bot. dan kami menjual yang sudah jadi atau sudah di program.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/sc.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+	
+		<section id="produkLainnya">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp text-center">Ringkasan Produk Lainnya</h2>
+				<div class="spacer" data-height="60"></div>
+				<ul class="portfolio-filter list-inline wow fadeInUp">
+					<li class="current list-inline-item" data-filter="*">Cari Produk</li>
+					<li class="list-inline-item" data-filter=".produkLainnya-1">Sc Otomatis Buy</li>
+					<li class="list-inline-item" data-filter=".produkLainnya-2">Topup Button PPOB</li>
+					<li class="list-inline-item" data-filter=".produkLainnya-3">Script Elaina Md</li>
+				</ul>
+
+				<div class="pf-filter-wrapper">
+					<select class="portfolio-filter-mobile">
+						<option value="*">Produk</option>
+						<option value=".produkLainnya-1">Sc Otomatis Buy</option>
+						<option value=".produkLainnya-2">Topup Button PPOB</option>
+		        	    <option value=".produkLainnya-3">Script Elaina Md</option>
+					</select>
+				</div>
+
+				<div class="row portfolio-wrapper">
+					<div class="col-md-4 col-sm-6 grid-item produkLainnya-1">
+						<a href="https://wa.me/6285189511339?text=.buyvps">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Sc Otomatis Buy</span>
+									<h4 class="title">Sc Otomatis Buy Adalah script buatan saya sendiri yg bisa menjual barang dengan otomatis payment orkut. bisa menjual apa saja dengan otomatis tanpa ribet.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/otomatis.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-6 grid-item produkLainnya-2">
+						<a href="https://wa.me/6285189511339?text=.buypanel">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Sc Topup Button PPOB</span>
+									<h4 class="title">Sc Topup PPOB Adalah script yang bisa menjual diamond ff, ml, pubg dll. juga bisa jual voucher, pulsa, pln. getway orkut otomatis masuk tanpa ribet.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/topup.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					
+					<div class="col-md-4 col-sm-6 grid-item produkLainnya-3">
+						<a href="https://wa.me/6285189511339?text=.buypanel">
+							<div class="portfolio-item rounded shadow-dark">
+								<div class="details">
+									<span class="term">Elaina-MD V11</span>
+									<h4 class="title">Elaina Adalah Sebuah Bot Yang Bertujuan Untuk Menghibur kalian buat jomblo/yg kesepian, bisa buat yang lainnya total fitur 1800+.</h4>
+									<span class="more-button"><i class="icon-link"></i></span>
+								</div>
+								<div class="thumb">
+									<img src="images/Elaina.png"/>
+									<div class="mask"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		
+		<section id="contact">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp">Hubungi Saya</h2>
+				<div class="spacer" data-height="20"></div>
+				<div class="row">
+
+					<!-- Kolom Informasi Kontak -->
+					<div class="col-md-4">
+						<div class="contact-info wow fadeInUp">
+							<p>Halo pengunjung yang terhormat, jika Anda ingin bertanya sesuatu atau membeli produk kami seperti <b>Script Bot WhatsApp</b>, <b>Panel Pterodactyl</b>, dan lainnya bisa hubungi saya melalui <a href="https://kenzshop.my.id"><b>kenzproduk.com</b></a> Atau <a href="https://wa.me/6285189511339"><b>WhatsApp</b></a>. 🙏</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section id="informasi">
+			<div class="container">
+				<h2 class="section-title wow fadeInUp">Informasi Saya</h2>
+				<div class="spacer" data-height="20"></div>
+				<div class="row">
+
+					<!-- Kolom Informasi Kontak -->
+					<div class="col-md-4">
+						<div class="informasi-info wow fadeInUp">
+							<p>Halo ini dia saluran <a href="https://whatsapp.com/channel/0029Vb4eEsf5Ejy3ZGnRCi1K"><b>Testimoni</b></a> dan saluran <a href="https://whatsapp.com/channel/0029Vb4eEsf5Ejy3ZGnRCi1K"><b>Utama</b></a> kami. untuk informasi lebih lanjut boleh dong follow😋. Terimakasih telah melihat berbagai produk kami🤗.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		
+		<div class="spacer" data-height="90"></div>
+
+	</main>
+
+	<a href="javascript:" id="return-to-top">
+		<i class="fas fa-arrow-up"></i>
+	</a>
+
+	<div class="footer">
+		<h1 class="btn btn-fake">Made With ❤️ by <a href="https://api.whatsapp.com/send?phone=6285189511339">Kenz Hosting</a>.</h1>
+	</div>
+
+	<script>
+		const audio = document.querySelector("#audio");
+
+		const quotes = [
+			{ text: "Sering dikecewain, tapi masih aja diperjuangin, mau heran tapi orang gila dunia.", author: "Anonim" },
+			{ text: "Jangan takut gagal, karena kegagalan adalah awal dari keberhasilan.", author: "Anonim" },
+			{ text: "Hidup itu seperti roda, kadang di atas, kadang di bawah.", author: "Filsuf Jalanan" },
+			{ text: "Sukses bukanlah kebetulan, tetapi hasil dari kerja keras dan ketekunan.", author: "Aristoteles" },
+			{ text: "Jangan biarkan impianmu tetap menjadi impian. Wujudkan dengan tindakan!", author: "Motivator Handal" },
+			{ text: "Orang yang sabar bukan berarti tidak pernah marah, dia hanya lebih pandai mengendalikan emosinya.", author: "Anonim" },
+			{ text: "Kesuksesan tidak datang dari zona nyaman. Beranilah melangkah keluar.", author: "Steve Jobs" },
+			{ text: "Lebih baik gagal dengan terhormat daripada menang dengan kecurangan.", author: "Mahatma Gandhi" },
+			{ text: "Jika kamu ingin sesuatu yang belum pernah kamu miliki, kamu harus bersedia melakukan sesuatu yang belum pernah kamu lakukan.", author: "Thomas Jefferson" },
+			{ text: "Jangan biarkan kebisingan opini orang lain menenggelamkan suara hati kamu sendiri.", author: "Steve Jobs" },
+			{ text: "Kamu tidak akan pernah menyeberangi lautan jika kamu takut kehilangan pandangan dari pantai.", author: "Cristoforo Colombo" },
+			{ text: "Jangan menunggu momen yang sempurna, ambil momen itu dan jadikan sempurna.", author: "Anonim" },
+			{ text: "Kebahagiaan bukanlah sesuatu yang sudah jadi. Itu berasal dari tindakan kita sendiri.", author: "Dalai Lama" },
+			{ text: "Keberhasilan adalah jumlah dari usaha kecil yang diulang hari demi hari.", author: "Robert Collier" },
+			{ text: "Jika ingin melihat perubahan di dunia, mulailah dari diri sendiri.", author: "Mahatma Gandhi" },
+			{ text: "Belajar dari kemarin, hidup untuk hari ini, berharap untuk besok.", author: "Albert Einstein" },
+			{ text: "Kita tidak bisa mengarahkan angin, tapi kita bisa menyesuaikan layar.", author: "Dolly Parton" },
+			{ text: "Lebih baik menyalakan lilin daripada mengutuk kegelapan.", author: "Konfusius" },
+			{ text: "Orang sukses memiliki kebiasaan melakukan hal yang tidak disukai orang gagal.", author: "Thomas Edison" },
+			{ text: "Kegagalan adalah bumbu yang memberi kesuksesan rasa.", author: "Truman Capote" }
+		];
+
+		const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+		setTimeout(() => {
+			Swal.fire({
+				title: "Kenz Hosting",
+				text: randomQuote.text,
+				footer: `— ${randomQuote.author}`,
+				icon: "info",
+				confirmButtonText: "Accept",
+				allowOutsideClick: false,
+			}).then(() => {
+				audio.play();
+			}).catch(() => {
+				audio.play();
+			});
+		}, 1000);
+	</script>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/infinite-scroll.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/morphext.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
